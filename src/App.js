@@ -1,9 +1,9 @@
-import Modal from "./components/Modal";
 import Route from "./components/Route";
 import Sidebar from "./components/Sidebar";
 import AccordionPage from "./pages/AccordionPage";
 import ButtonPage from "./pages/ButtonPage";
 import DropdownPage from "./pages/DropdownPage";
+import ModalPage from "./pages/ModalPage";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                     <ButtonPage></ButtonPage>
                 </Route>
                 <Route path="/modal">
-                    <Modal></Modal>
+                    <ModalPage></ModalPage>
                 </Route>
             </div>
         </div>
