@@ -5,13 +5,20 @@ const Link = ({ to, children }) => {
     const { navigate } = useContext(NavigationContext);
 
     const handleClick = (event) => {
+        // console.log(event);
+
+        // so that user open the new tab by pressing ctrl key on any link
+        if (event.metaKey || event.ctrlKey) {
+            return;
+        }
+
         event.preventDefault();
 
         navigate(to);
     }
 
     return (
-        <a onClick={handleClick}>{children}</a>
+        <a href={to} onClick={handleClick}>{children}</a>
     );
 };
 
