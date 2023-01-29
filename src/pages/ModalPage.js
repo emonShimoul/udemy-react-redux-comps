@@ -9,10 +9,14 @@ const ModalPage = () => {
         setShowModal(true);
     };
 
+    const handleClose = () => {
+        setShowModal(false);
+    }
+
     return (
         <div>
             <Button onClick={handleClick} primary>Open Modal</Button>
-            {showModal && <Modal></Modal>}
+            {showModal && <Modal onClose={handleClose}></Modal>}
         </div>
     );
 };
