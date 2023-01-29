@@ -3,8 +3,9 @@ import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 
 function ButtonPage() {
     const handleOnClick = () => {
-        console.log('Click!!');
+
     }
+
     return (
         <div>
             <div>
