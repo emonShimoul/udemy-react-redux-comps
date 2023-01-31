@@ -8,6 +8,11 @@ const SortableTable = (props) => {
     const { config, data } = props;
 
     const handleClick = (label) => {
+        if (sortBy && label !== sortBy) {
+            setSortOrder('asc');
+            setSortBy(label);
+            return;
+        }
         // console.log(label);
         if (sortOrder === null) {
             setSortOrder('asc');
@@ -60,10 +65,7 @@ const SortableTable = (props) => {
     }
 
     return (
-        <div>
-            {sortOrder} - {sortBy}
-            <Table {...props} config={updatedConfig} data={sortedData} />
-        </div>
+        <Table {...props} config={updatedConfig} data={sortedData} />
     );
 };
 
