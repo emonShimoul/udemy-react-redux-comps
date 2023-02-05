@@ -7,25 +7,26 @@ const DECREMENT_COUNT = 'decrement';
 const SET_VALUE_TO_ADD = 'change_value_to_add';
 
 const reducer = (state, action) => {
-    if (action.type === INCREMENT_COUNT) {
-        return {
-            ...state,
-            count: state.count + 1,
-        };
+
+    switch (action.type) {
+        case INCREMENT_COUNT:
+            return {
+                ...state,
+                count: state.count + 1,
+            };
+        case DECREMENT_COUNT:
+            return {
+                ...state,
+                count: state.count - 1,
+            };
+        case SET_VALUE_TO_ADD:
+            return {
+                ...state,
+                valueToAdd: action.payload,
+            }
+        default:
+            return state;
     }
-    else if (action.type === DECREMENT_COUNT) {
-        return {
-            ...state,
-            count: state.count - 1,
-        };
-    }
-    if (action.type === SET_VALUE_TO_ADD) {
-        return {
-            ...state,
-            valueToAdd: action.payload,
-        }
-    }
-    return state;
 };
 
 const CounterPage = ({ initialCount }) => {
