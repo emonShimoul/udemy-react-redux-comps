@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import Button from '../components/Button';
-// import useCounter from '../hooks/useCounter';
 import Panel from '../components/Panel';
 
 const CounterPage = ({ initialCount }) => {
-    // const { count, increment } = useCounter(initialCount);
     const [count, setCount] = useState(initialCount);
     const [valueToAdd, setValueToAdd] = useState(0);
 
@@ -18,7 +16,6 @@ const CounterPage = ({ initialCount }) => {
 
     const handleChange = (e) => {
         const value = parseInt(e.target.value) || 0;
-        // console.log(value);
         setValueToAdd(value);
     };
 
